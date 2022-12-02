@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using static System.Console;
 
 namespace CSharp6._6Practice
@@ -66,28 +67,28 @@ namespace CSharp6._6Practice
 
                 do
                 {
-                    string info = string.Empty;
+                    StringBuilder info = new StringBuilder();
                     Write("\nВведите ID сотрудника: ");
-                    info += $"{ReadLine()}#";
+                    info.Append($"{ReadLine()}#");
 
                     string writeTime = DateTime.Now.ToString("g");
                     WriteLine($"Запись добавлена: {writeTime}");
-                    info += $"{writeTime}#";
+                    info.Append($"{writeTime}#");
 
                     Write("Введи Ф.И.О. сотрудника: ");
-                    info += $"{ReadLine()}#";
+                    info.Append($"{ReadLine()}#");
 
                     Write("Введи возраст сотрудника: ");
-                    info += $"{ReadLine()}#";
+                    info.Append($"{ReadLine()}#");
 
                     Write("Введи рост сотрудника: ");
-                    info += $"{ReadLine()}см#";
+                    info.Append($"{ReadLine()}см#");
 
                     Write("Введи дату рождения сотрудника: ");
-                    info += $"{ReadLine()}#";
+                    info.Append($"{ReadLine()}#");
 
                     Write("Введи город рождения сотрудника: ");
-                    info += $"город {ReadLine()}#";
+                    info.Append($"город {ReadLine()}#");
 
                     addEmployees.WriteLine(info);
                     Write("Продолжить ввод? y/n");
