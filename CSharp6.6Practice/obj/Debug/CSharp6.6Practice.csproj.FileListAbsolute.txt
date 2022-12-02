@@ -1,0 +1,7 @@
+D:\Programs\VSProjects\CSharp6.6Practice\CSharp6.6Practice\bin\Debug\CSharp6.6Practice.exe.config
+D:\Programs\VSProjects\CSharp6.6Practice\CSharp6.6Practice\bin\Debug\CSharp6.6Practice.exe
+D:\Programs\VSProjects\CSharp6.6Practice\CSharp6.6Practice\bin\Debug\CSharp6.6Practice.pdb
+D:\Programs\VSProjects\CSharp6.6Practice\CSharp6.6Practice\obj\Debug\CSharp6.6Practice.csproj.AssemblyReference.cache
+D:\Programs\VSProjects\CSharp6.6Practice\CSharp6.6Practice\obj\Debug\CSharp6.6Practice.csproj.CoreCompileInputs.cache
+D:\Programs\VSProjects\CSharp6.6Practice\CSharp6.6Practice\obj\Debug\CSharp6.6Practice.exe
+D:\Programs\VSProjects\CSharp6.6Practice\CSharp6.6Practice\obj\Debug\CSharp6.6Practice.pdb
