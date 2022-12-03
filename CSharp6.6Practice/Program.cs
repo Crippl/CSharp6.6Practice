@@ -10,32 +10,36 @@ namespace CSharp6._6Practice
         static void Main(string[] args)
         {
             bool correct;
+            string path = @"Employees.txt";
+
+            if (!File.Exists(path))
+            {
+                File.Create(path).Close();
+            }
 
             for (int i = 0; i < int.MaxValue; i++)
             {
-                WriteLine("Что вы желаете сделать? 1 - Отобразить, 2 - Добавить новую запись");
+                WriteLine("Что вы желаете сделать? 1 - Отобразить, 2 - Добавить новую запись, 3 - Выйти из программы");
                 correct = byte.TryParse(ReadLine(), out byte choose);
                 if (correct)
                 {
-                    if (choose == 1)
+                    switch (choose)
                     {
-                        ShowEmployee();
-                        WriteLine();
+                        case 1:
+                            ShowEmployee(path);
+                            WriteLine();
+                            break;
+                        case 2:
+                            AddEmployee(path);
+                            WriteLine();
+                            break;
+                        case 3:
+                            System.Environment.Exit(0);
+                            break;
+                        default:
+                            WriteLine("Такого параметра не существует");
+                            break;
                     }
-                    else if (choose == 2)
-                    {
-                        AddEmployee();
-                        WriteLine();
-                    }
-                    else
-                    {
-                        WriteLine($"Нет выбора {choose}");
-                    }
-                }
-                else
-                {
-                    WriteLine("Такого параметра не существует");
-                    break;
                 }
             }
         }
@@ -43,9 +47,9 @@ namespace CSharp6._6Practice
         /// <summary>
         /// Метод, отображающий данные на экране
         /// </summary>
-        static void ShowEmployee()
+        static void ShowEmployee(string path)
         {
-            using (StreamReader showEmployees = new StreamReader("Employees.txt"))
+            using (StreamReader showEmployees = new StreamReader(path))
             {
                 string employeesInfo;
                 while ((employeesInfo=showEmployees.ReadLine()) != null)
@@ -59,9 +63,9 @@ namespace CSharp6._6Practice
         /// <summary>
         /// Метод, позволяющий заполнить данные и добавить новую запись
         /// </summary>
-        static void AddEmployee()
+        static void AddEmployee(string path)
         {
-            using (StreamWriter addEmployees = new StreamWriter("Employees.txt", true))
+            using (StreamWriter addEmployees = new StreamWriter(path, true))
             {
                 char key = 'y';
 
